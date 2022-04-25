@@ -17,6 +17,14 @@ const { state, onChange } = createStore({
     name: 'TeePee',
     video: 'https://player.twitch.tv/?channel=teepee&parent=localhost&autoplay=false',
     chat: 'https://www.twitch.tv/embed/teepee/chat?parent=localhost'
+  },{
+    name: 'Merk',
+    video: 'https://player.twitch.tv/?channel=merk&parent=localhost&autoplay=false',
+    chat: 'https://www.twitch.tv/embed/merk/chat?parent=localhost'
+  },{
+    name: 'Symfuhny',
+    video: 'https://player.twitch.tv/?channel=symfuhny&parent=localhost&autoplay=false',
+    chat: 'https://www.twitch.tv/embed/symfuhny/chat?parent=localhost'
   }],
   announcement: <string> '',
   currentPlatform: <string> 'twitch',
