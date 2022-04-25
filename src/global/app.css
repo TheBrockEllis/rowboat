@@ -1,0 +1,24 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+/* Set variables for all modes */
+:root {
+  /* Set the background of the entire app */
+  --ion-background-color: #f0f0f0;
+  --ion-color-primary: green;
+
+  /* Set the font family of the entire app */
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}

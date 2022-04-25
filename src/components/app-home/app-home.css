@@ -1,0 +1,19 @@
+ion-segment {
+  width: 200px;
+}
+
+.split {
+  height: calc(100vh - 112px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.split #streamer-list {
+  width: 20vw;
+}
+
+.split #streamer-player {
+  width: 80vw;
+}
