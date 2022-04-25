@@ -8,7 +8,9 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "app:run": "neu update && neu run -- --window-enable-inspector",
+    "app:build": "neu update && neu build"
   },
   "devDependencies": {
     "@stencil/core": "2.13.0",
