@@ -1,41 +1,39 @@
-# Stencil App Starter
+# Rowboat
 
-Stencil is a compiler for building fast web apps using Web Components.
+Helping you navigate the streams!
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+## Stack
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all. In many cases, Stencil can be used as a drop in replacement for traditional frontend frameworks given the capabilities now available in the browser, though using it as such is certainly not required.
+### Stencil
 
-Stencil also enables a number of key capabilities on top of Web Components, in particular Server Side Rendering (SSR) without the need to run a headless browser, pre-rendering, and objects-as-properties (instead of just strings).
+The main application is built with [stenciljs](https://stenciljs.com/docs/introduction). Stencil providers a spiffy
+framework for building out page components and app architecture with jsx. It's main strength is outputting vanilla
+web components, which is awesome #usetheplatform #ihatereact.
 
-## Getting Started
+### Ionic Framework
 
-To start a new project using Stencil, clone this repo to a new directory:
+The component library is the [Ionic Framework](https://ionicframework.com/docs/components). Ionic provides a ton of
+components that are ready to use out of the box like list views, form fields, etc. I've used Ionic for many
+hybrid mobile apps and love the product and team behind it.
 
-```bash
-npm init stencil app
-```
+### Neutralino
 
-and run:
+The tool used to build desktop application is [Neutralino](https://neutralino.js.org/docs/). It uses the existing web
+library on the native device instead of bundling Chromium, resulting in much smaler file sizes. This is the first time
+using this tool, but it seems promising thus far.
 
-```bash
-npm start
-```
+## Commands
 
-To build the app for production, run:
+### Running locally
 
-```bash
-npm run build
-```
+- make sure you've run `npm install` to install dependencies
 
-To run the unit tests once, run:
+- you will need the `neu` [CLI tool](https://neutralino.js.org/docs/cli/neu-cli) in order to build desktop apps
 
-```
-npm test
-```
+- run `npm run build` to trigger Stencil to output a build into `/www`
 
-To run the unit tests and watch for file changes during development, run:
+- running `npm run app:run` will run the desktop app on your platform locally, Ctl+C to stop
 
-```
-npm run test.watch
-```
+- if you want to run JUST the stencil app, `npm run start` will do the trick
+
+- to build desktop apps, run `npm run app:build` and the executables will be located in `/dist/rowboat`
