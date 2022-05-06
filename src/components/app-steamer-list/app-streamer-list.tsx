@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, State } from '@stencil/core';
 import state from '../../global/store';
 // import Streamer from '../../interfaces/streamer';
 
@@ -9,25 +9,56 @@ import state from '../../global/store';
 })
 export class AppStreamerList {
   @Prop() streamers: any[]; // TODO streamer but throws errors
+  @State() newStream: string;
+
+  addStreamer() {
+    state[state.currentPlatform] = [ ...state[state.currentPlatform], { name: this.newStream } ]
+    state.announcement = `${this.newStream} was added`
+
+    this.newStream = undefined;
+  }
+
+  removeStreamer({ index, name }) {
+    state[state.currentPlatform].splice(index, 1)
+    state[state.currentPlatform] = [ ...state[state.currentPlatform] ]
+    state.announcement = `${name} was removed`
+  }
 
   render() {
     return (
       <nav>
-        <ion-list lines='full' class="streamer-list">
+        <ion-list class="streamer-list">
           <ion-list-header>
             <ion-label>Streamers</ion-label>
           </ion-list-header>
   
           {this.streamers && this.streamers.length > 0 
-            ? this.streamers.map( (streamer) => {
+            ? this.streamers.map( (streamer, index) => {
                 return (
-                  <ion-item button detail onClick={() => state.currentStreamer = streamer} color={state.currentStreamer.video === streamer.video ? 'primary' : undefined} >
-                    <ion-label>{streamer.name}</ion-label>
+                  // color={state.currentStreamer.name === streamer.name ? 'primary' : undefined}
+                  <ion-item button class={"streamer " + (state.currentStreamer.name === streamer.name ? "active" : "") } detail>
+                    <ion-button slot="start" color="danger" onClick={() => this.removeStreamer({ index, name: streamer.name })}>
+                      X
+                    </ion-button>
+                    <ion-label onClick={() => state.currentStreamer = streamer} >{streamer.name}</ion-label>
                   </ion-item>
                 )
               })
             : ''
           }
+        </ion-list>
+
+        <ion-list class="add-streamer-list">
+          <ion-list-header>
+            <ion-label>Add Stream</ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-button slot="start" onClick={() => this.addStreamer()}>
+              Add
+            </ion-button>
+            <ion-input placeholder='username' value={this.newStream} onChange={(ev) => this.newStream = ev.target.value}></ion-input>
+          </ion-item>
         </ion-list>
       </nav>
     )

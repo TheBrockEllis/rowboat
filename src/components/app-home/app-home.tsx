@@ -35,10 +35,9 @@ export class AppHome {
             </div>
           </main>
 
-
           <ion-footer>
             <ion-toolbar>
-              <ion-title>brought to you by Rowboat</ion-title>
+              <ion-title innerHTML={state.announcement ? state.announcement : `Brought to you by <a href="https://thebrockellis.com/rowboat" target="_blank">Rowboat</a>`}></ion-title>
             </ion-toolbar>
           </ion-footer>
       </ion-content>
