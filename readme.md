@@ -1,5 +1,4 @@
-
-<img width="1500" alt="Screenshot 2024-02-13 at 11 54 28 AM" src="https://github.com/TheBrockEllis/rowboat/assets/1606194/1194fdc2-0c7d-4b5a-ae91-9f31fbe74662">
+<img width="1395" alt="Screenshot 2024-02-13 at 11 57 34 AM" src="https://github.com/TheBrockEllis/rowboat/assets/1606194/ce08dca4-aafa-4d8b-bb4d-c72a09777467">
 
 # Rowboat
 
